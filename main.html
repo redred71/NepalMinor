@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiaalinzamelingsactie</title>
+    <style>
+        /* Stijlen voor de pagina */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .project-info {
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .progress {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0;
+            transition: width 0.5s ease-in-out;
+        }
+        .milestone {
+            position: absolute;
+            height: 100%;
+            border-left: 2px solid #000;
+            top: 0;
+        }
+        .goal-marker {
+            left: 50%; /* Plaats de mijlpaalmarker in het midden van de balk */
+        }
+        .max-marker {
+            right: 0; /* Plaats de mijlpaalmarker aan het einde van de balk */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Projectnaam en verhaal -->
+        <div class="project-info">
+            <h1>Projectnaam</h1>
+            <p>Verhaal van het project hier...</p>
+        </div>
+        
+        <!-- Foto's -->
+        <div class="photos">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <!-- Voeg meer foto's toe indien nodig -->
+        </div>
+        
+        <!-- Dynamische balk voor materiaalverzameling -->
+        <div class="progress-bar">
+            <div class="progress" style="width: 50%;"></div> <!-- Verander de breedte van deze balk om de voortgang aan te passen -->
+            <!-- Milestone markers -->
+            <div class="milestone goal-marker"></div> <!-- Mijlpaalmarker voor het streven -->
+            <div class="milestone max-marker"></div> <!-- Mijlpaalmarker voor het maximum -->
+        </div>
+        <p>Materiaal verzameld: <span id="materialCollected">50</span>%</p> <!-- Voeg hier de voortgang in percentage toe -->
+        <p>Streven: <span id="goal">100</span></p> <!-- Voeg hier het streven toe -->
+        <p>Maximum: <span id="max">200</span></p> <!-- Voeg hier het maximum toe -->
+        
+        <!-- Link naar pagina met invoerveld -->
+        <a href="update.html">Bijwerkingspagina</a>
+    </div>
+
+    <script>
+        // JavaScript om de voortgangsbalk dynamisch te maken en bij te werken
+        const progress = document.querySelector('.progress');
+        const materialCollectedElement = document.getElementById('materialCollected');
+        const goalElement = document.getElementById('goal');
+        const maxElement = document.getElementById('max');
+    </script>
+</body>
+</html>
