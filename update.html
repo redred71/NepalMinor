@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijwerken voortgang</title>
+</head>
+<body>
+    <h2>Bijwerkingspagina</h2>
+    <label for="newProgress">Nieuwe voortgang:</label>
+    <input type="number" id="newProgress" min="0" max="100">
+    <button onclick="updateProgress()">Update</button>
+
+    <script>
+        // JavaScript om de voortgang te bijwerken
+        function updateProgress() {
+            const newProgress = document.getElementById('newProgress').value;
+            if (newProgress >= 0 && newProgress <= 100) {
+                // Stuur de nieuwe voortgang naar de hoofdpagina
+                localStorage.setItem('newProgress', newProgress);
+                // Keer terug naar de hoofdpagina
+                window.location.href = 'main.html';
+            } else {
+                alert('Voer een geldige waarde in tussen 0 en 100.');
+            }
+        }
+    </script>
+</body>
+</html>
